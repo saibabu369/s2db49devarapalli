@@ -1,0 +1,14 @@
+block content
+    h1= title
+    -let results =[{dove_type: "Rock Pigeon" ,dove_habitat: "Urban areas" ,dove_threat: "Pesticides"},{dove_type:"White-crowned Pigeon",dove_habitat:"Mangrove forests",dove_threat:"Habitat loss due to hurricanes"},{dove_type:"Red-billed Pigeon",dove_habitat:"Tropical forests",dove_threat:"Habitat loss"}]
+    div(class="container-fluid")
+     div(class="column")
+        each dov,index in results 
+            div(class="col-sm-2" onclick=`buy(${index})`)  #{dov.dove_type}  
+            div(class="col-sm-2" onclick=`buy(${index})`)  #{dov.dove_habitat}
+            div(class="col-sm-2" onclick=`buy(${index})`)  #{dov.dove_threat}
+script.
+    function buy(n)
+    {
+        alert(`You have purchased item ${n+1}`);
+    }

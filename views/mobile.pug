@@ -1,0 +1,14 @@
+block content
+    h1= title
+    -let results =[{mobile_brand: "Apple" ,mobile_model: "13 Pro" ,mobile_cost: 662},{mobile_brand:"Samsung",mobile_model:"Galaxy s22",mobile_cost:207},{mobile_brand:"One plus",mobile_model:"10 Pro",mobile_cost:434}]
+    div(class="container-fluid")
+     div(class="column")
+        each mobile,index in results 
+            div(class="col-sm-2" onclick=`buy(${index})`)  #{mobile.mobile_brand}  
+            div(class="col-sm-2" onclick=`buy(${index})`)  #{mobile.mobile_model}
+            div(class="col-sm-2" onclick=`buy(${index})`)  #{mobile.mobile_cost}
+script.
+    function buy(n)
+    {
+        alert(`You have purchased item ${n+1}`);
+    }
